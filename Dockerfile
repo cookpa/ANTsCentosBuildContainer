@@ -55,11 +55,11 @@ RUN rm -f /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo && \
     curl -O https://www.centos.org/keys/RPM-GPG-KEY-CentOS-SIG-SCLo && \
     rpm --import RPM-GPG-KEY-CentOS-SIG-SCLo
 
-# Clean YUM cache again and install devtoolset-7 and git
+# Clean YUM cache again and install devtoolset-11 and git
 RUN yum clean all && yum makecache && \
     yum install -y devtoolset-11 git
 
-# Enable devtoolset-7 globally
+# Enable devtoolset-11 globally
 RUN echo 'source /opt/rh/devtoolset-11/enable' >> /etc/profile && \
     echo 'source /opt/rh/devtoolset-11/enable' >> /etc/bashrc
 
